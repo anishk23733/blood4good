@@ -1,0 +1,25 @@
+[debug] [2019-03-31T01:26:56.809Z] ----------------------------------------------------------------------
+[debug] [2019-03-31T01:26:56.812Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve --only hosting
+[debug] [2019-03-31T01:26:56.812Z] CLI Version:   6.5.0
+[debug] [2019-03-31T01:26:56.812Z] Platform:      darwin
+[debug] [2019-03-31T01:26:56.812Z] Node Version:  v11.10.1
+[debug] [2019-03-31T01:26:56.813Z] Time:          Sat Mar 30 2019 18:26:56 GMT-0700 (Pacific Daylight Time)
+[debug] [2019-03-31T01:26:56.813Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-03-31T01:26:56.826Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-03-31T01:26:56.826Z] > authorizing via signed-in user
+[debug] [2019-03-31T01:26:56.826Z] [iam] checking project blood4good-97165 for permissions ["firebase.projects.get"]
+[debug] [2019-03-31T01:26:56.828Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/blood4good-97165:testIamPermissions  
+
+[debug] [2019-03-31T01:26:57.258Z] <<< HTTP RESPONSE 200
+[debug] [2019-03-31T01:26:57.260Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/blood4good-97165  
+ 
+[debug] [2019-03-31T01:26:57.590Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/anishk23733/Documents/GitHub/blood4good'...
+[info] 
+[debug] [2019-03-31T01:26:57.594Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/830576754290/clients/_:getWebAppConfig  
+ 
+[debug] [2019-03-31T01:26:58.053Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: ./public
+[info] ✔  hosting: Local server: http://localhost:5000

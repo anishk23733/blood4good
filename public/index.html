@@ -1,41 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="theme-color" content="#000000" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blood4Good Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+</head>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+<style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Raleway", sans-serif;
+        color: black;
+
+    }
+
+    body,
+    html {
+        height: 100%;
+        line-height: 1.8;
+    }
+
+    /* Full height image header */
+    .bgimg-1 {
+        background-position: center;
+        background-size: cover;
+        background: linear-gradient(to right, #e52d27, #b31217);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        min-height: 100%;
+    }
+
+    .w3-bar .w3-button {
+        padding: 16px;
+    }
+
+    .foot {
+        background: linear-gradient(to right, #e52d27, #b31217);
+        color: white;
+        padding: 60px
+    }
+
+    .colored {
+        color: white;
+    }
+
+    .chart {
+        margin: 0 auto;
+    }
+
+    .description {
+        height: 100vh;
+        text-align: center;
+    }
+
+    .stats {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
+<body>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-card" id="myNavbar">
+            <a href="./index.html" class="w3-bar-item w3-button w3-wide"><img style="height: 30px"
+                    src="./images/website_logo.png" alt=""></a>
+            <div class="w3-right w3-hide-small">
+                <a href="./index.html" class="w3-bar-item w3-button">ABOUT</a>
+                <a href="./login.html" class="w3-bar-item w3-button"> SIGN IN</a>
+                <a href="contact.html" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+            </div>
+
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+                onclick="w3_open()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
+    <header class="bgimg-1 w3-display-container" id="home">
+        <div class="w3-display-left w3-text-white" style="padding:48px">
+            <span class="w3-jumbo w3-hide-small">A pint of blood is worth approximately 3 lives.</span><br>
+            <span class="w3-xxlarge w3-hide-large w3-hide-medium">A pint of blood is worth approximately 3
+                lives.</span><br>
+            <span class="w3-large">Help save millions of lives through Blood4Good.</span>
+            <p><a href="#about"
+                    class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-hover-opacity-off">Learn
+                    more</a></p>
+        </div>
+        <div class="w3-display-bottomleft colored w3-large" style="padding:24px 48px">
+            <i class="fa fa-facebook-official"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-snapchat"></i>
+            <i class="fa fa-pinterest-p"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-linkedin"></i>
+        </div>
+    </header>
+    <!-- About Section -->\
+    <div class="stats">
+        <h3 data-aos="fade up">STATISTICS</h3><br>
+
+    </div>
+
+    <div class="description" data-aos="fade-up">
+        <div class="chart" style="height: 70%; width: 70%;">
+            <canvas id="myChart"></canvas><br>
+
+        </div>
+        <h4 style="margin:  0 5rem">Every 3 seconds someone needs blood. 1 out of every 10 people who enter hospitals as
+            patients need blood.
+            4.5 million Americans would die each year without life saving blood transfusions. Even though transfusions
+            are saving lives, many die because the needed blood type is not present at that moment and there is a delay
+            in its arrival. Our application solves this problem and saves more lives. Blood4Good implements
+            crowdsourcing, where users are either classified as donors or recipients. They enter their names, addresses
+            and phone numbers into the app. When a recipient is in need of blood, they enter the app and receive
+            locations of
+            nearby donors. They can then contact the donors and set up a blood transfusion, which allows the blood to be
+            brought in a timely manner and saves more people.
+
+        </h4>
+    </div>
+
+
+    <div class="foot">
+        <footer class="w3-center">
+
+            <div class="w3-xlarge w3-section">
+                <i class="fa fa-facebook-official"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-snapchat"></i>
+                <i class="fa fa-pinterest-p"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-linkedin"></i>
+            </div>
+            <p>Created by Yuvraj Khullar, Anish Kachinthaya, Pratik Kamanboina</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+</body>
+
+
+<div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+</div>
+<script>
+    AOS.init({
+        duration: 2000,
+        once: true
+    });
+</script>
+
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'pie',
+
+
+        // The data for our dataset
+        data: {
+            labels: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'],
+            datasets: [{
+                label: 'Blood Types Around the World ',
+                backgroundColor: [
+                    'rgb(255, 8, 68)',
+                    'rgb(255, 32, 80)',
+                    'rgb(255, 56, 92)',
+                    'rgb(255, 80, 104)',
+                    'rgb(255, 104, 116)',
+                    'rgb(255, 128, 128)',
+                    'rgb(255, 152, 140)',
+                    'rgb(255, 177, 153)'
+                ],
+
+                data: [34, 6, 9, 2, 3, 1, 38, 7]
+            }]
+        },
+
+        // Configuration options go here
+        options: {
+
+        }
+    });
+</script>
+
 </html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <title>Contact</title>
+</head>
+
+<style>
+    body,
+    h1,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Raleway", sans-serif;
+        color: black;
+    }
+
+    body,
+    html {
+        height: 100%;
+        line-height: 1.8;
+
+    }
+
+    .main-box {
+        background-color: rgb(233, 83, 83);
+    }
+
+    .w3-bar .w3-button {
+        padding: 15px;
+    }
+
+    body {
+        text-align: center;
+        justify-content: center;
+        background-color: rgb(212, 66, 66);
+
+    }
+
+    .cont {
+        margin-top: 150px;
+        margin-left: 30px;
+        color: white;
+    }
+
+    .contact-input {
+        width: 30%;
+        padding: 1rem;
+        margin: .5rem;
+        border-radius: .25rem;
+        border: none;
+
+    }
+
+    .foot {}
+</style>
+
+<body>
+    <div class="cont">
+        <h2>Have Any Questions?</h2><br>
+        <form action="https://formspree.io/anishk23733@gmail.com" method="POST" autocomplete="off">
+            <input class="contact-input" type="text" name="name" placeholder="Name"><br>
+            <input class="contact-input" type="email" name="_replyto" placeholder="Email"><br>
+            <input class="contact-input" type="text" name="message" placeholder="Message"><br>
+            <input class="contact-input contact-btn" type="submit" value="Send">
+        </form>
+    </div>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-card" id="myNavbar">
+            <a href="./index.html" class="w3-bar-item w3-button w3-wide"><img style="height: 30px"
+                    src="./images/website_logo.png" alt=""></a>
+            <!-- Right-sided navbar links -->
+            <div class="w3-right w3-hide-small">
+                <a href="./index.html" class="w3-bar-item w3-button">ABOUT</a>
+                <a href="./login.html" class="w3-bar-item w3-button"> SIGN IN</a>
+                <a href="contact.html" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+            </div>
+            <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+                onclick="w3_open()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div class="foot">
+        <footer class="w3-center">
+
+            <div class="w3-xlarge w3-section">
+                <i class="fa fa-facebook-official"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-snapchat"></i>
+                <i class="fa fa-pinterest-p"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-linkedin"></i>
+            </div>
+            <p>Created by Yuvraj Khullar, Anish Kachinthaya, Pratik Kamanboina</p>
+        </footer>
+    </div>
+    <div>
+
+
+</body>
+
+</html>

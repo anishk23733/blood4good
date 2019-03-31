@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Login</title>
+	<link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+	<style>
+		.button {
+
+			display: inline-block;
+			border: none;
+			color: black;
+			padding: 15px 32px;
+			text-decoration: none;
+			font-size: 16px;
+			cursor: pointer;
+			border-radius: 12px;
+			border-color: grey;
+		}
+
+		.gbutton:hover {
+			opacity: 1;
+		}
+
+		.gbutton {
+			background-color: rgb(179, 3, 3);
+			display: inline-block;
+			margin-bottom: 40px;
+
+			color: white;
+		}
+
+		#rcorners1 {
+			border-radius: 25px;
+			background: rgb(179, 3, 3);
+			padding: 20px;
+			width: 200px;
+			height: 150px;
+		}
+
+		.signInContainer {
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: linear-gradient(to right, #e52d27, #b31217);
+			background-size: cover;
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		.signInBox {
+			width: 35%;
+			height: 45%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			background-color: #fff;
+			border-radius: 1rem;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="signInContainer">
+		<div class="signInBox">
+			<img style="height: 30px" src="./images/website_logo.png" alt=""><br><br>
+			<a href="" id="google-sign-in" class="gbutton button"><img style="height: 20px"
+					src="https://avatars1.githubusercontent.com/u/16785467?s=400&v=4" alt=""> Log in
+				with Google</a>
+			<a href="./index.html" class="gbutton button">Back<a></a>
+		</div>
+	</div>
+
+
+	<div>
+		<script src="/__/firebase/5.9.1/firebase-app.js"></script>
+		<script src="/__/firebase/5.9.1/firebase-auth.js"></script>
+		<script src="/__/firebase/5.9.1/firebase-storage.js"></script>
+		<script src="/__/firebase/5.9.1/firebase-messaging.js"></script>
+		<script src="/__/firebase/5.9.1/firebase-firestore.js"></script>
+		<script src="/__/firebase/init.js"></script>
+
+		<script src="scripts/login.js"></script>
+</body>
+
+</html>

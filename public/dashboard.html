@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./styles/form.css">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <title>Dashboard</title>
+
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Raleway", sans-serif;
+            color: black;
+        }
+
+        .content-dashboard {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        body {
+            background-image: url("./images/w-349443-unsplash.jpg");
+            background-size: cover;
+        }
+
+        .w3-bar .w3-button {
+            padding: 15px;
+        }
+
+        .blood-picker {
+            padding: 15px;
+        }
+
+        .form-main div {
+            margin: 2rem
+        }
+
+        .users-box {
+            display: flex;
+            margin: 2rem;
+            flex-direction: column;
+            /* align-items: center; */
+            justify-content: center;
+        }
+
+        .userCard {
+            width: 100%;
+            background-color: #fff;
+            margin: 1rem 0;
+            border-radius: 1rem;
+            padding: 3rem;
+            text-decoration: none;
+        }
+
+        .marker {
+            background-image: url('./images/mapbox-icon.png');
+            background-size: cover;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .mapboxgl-popup {
+            max-width: 200px;
+        }
+
+        .mapboxgl-popup-content {
+            text-align: center;
+            font-family: 'Open Sans', sans-serif;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- <main class="mdl-layout__content mdl-color--grey-100">
+        <div id="messages-card-container" class="mdl-cell mdl-cell--12-col mdl-grid">
+
+            <div id="messages-card"
+                class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop">
+                <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+                    <div id="messages">
+                        <span id="message-filler"></span>
+                    </div>
+                    <form id="message-form" action="#">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="message">
+                            <label class="mdl-textfield__label" for="message">Blood Type</label>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+            <div id="must-signin-snackbar" class="mdl-js-snackbar mdl-snackbar">
+                <div class="mdl-snackbar__text"></div>
+                <button class="mdl-snackbar__action" type="button"></button>
+            </div>
+
+        </div>
+    </main> -->
+
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-card" id="myNavbar">
+            <a href="./index.html" class="w3-bar-item w3-button w3-wide"><img style="height: 30px"
+                    src="./images/website_logo.png" alt=""></a>
+            <!-- Right-sided navbar links -->
+            <div class="w3-right w3-hide-small">
+                <span class="w3-bar-item w3-button" id="username"></span>
+                <a href="" class="w3-bar-item w3-button">SETTINGS</a>
+                <a href="" id="sign-out" class="w3-bar-item w3-button">SIGN OUT</a>
+            </div>
+            <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+                onclick="w3_open()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
+    <section>
+        <h1></h1>
+    </section>
+
+    <div class="content-dashboard">
+        <div class="main-box">
+            <form action="/action_page.php" class="form-main">
+                <div class="question">
+                    <label>Address:</label>
+                    <input type="text" id="address" required />
+
+                </div>
+                <div class="question">
+                    <label>Phone Number:</label>
+                    <input type="text" id="phone" required />
+                </div>
+                <div>
+                    <label>Blood Type:</label>
+                    <span class="blood-picker">
+                        <select name="blood" id="blood-type">
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+
+                        </select>
+                    </span>
+                </div>
+                <div class="question">
+                    <button id="submit-button">Submit</button>
+                </div>
+            </form>
+
+        </div>
+        <div class="users-box">
+
+            <div id='map' style='width: 100%; height: 300px'></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <div class="foot">
+        <footer class="w3-center">
+
+            <div class="w3-xlarge w3-section">
+                <i class="fa fa-facebook-official"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-snapchat"></i>
+                <i class="fa fa-pinterest-p"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-linkedin"></i>
+            </div>
+            <p>Created by Yuvraj Khullar, Anish Kachinthaya, Pratik Kamanboina</p>
+        </footer>
+    </div>
+    <div>
+        <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-firestore.js"></script>
+
+        <script src="/__/firebase/5.9.1/firebase-app.js"></script>
+        <script src="/__/firebase/5.9.1/firebase-auth.js"></script>
+        <script src="/__/firebase/5.9.1/firebase-storage.js"></script>
+        <script src="/__/firebase/5.9.1/firebase-messaging.js"></script>
+        <script src="/__/firebase/5.9.1/firebase-firestore.js"></script>
+        <script src="/__/firebase/init.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="./scripts/dashboard.js"></script>
+</body>
+
+</html>
